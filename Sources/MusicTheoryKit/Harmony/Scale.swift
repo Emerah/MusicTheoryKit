@@ -116,19 +116,19 @@ extension MusicTheoryKit.Harmony {
         /// The spelling follows diatonic degree order from the provided tonic and fails when any note would
         /// require an accidental outside the current `NoteName` model.
         ///
-        /// - Parameter tonicNoteName: The spelled tonic to use when naming the scale.
+        /// - Parameter tonic: The spelled tonic to use when naming the scale.
         /// - Returns: The ordered scale note names, or `nil` when the spelling cannot be represented.
         public func noteNames(
-            tonicNoteName: MusicTheoryKit.Pitch.NoteName
+            tonic: MusicTheoryKit.Pitch.NoteName
         ) -> [MusicTheoryKit.Pitch.NoteName]? {
-            guard tonicNoteName.pitchClass == tonic else {
+            guard tonic.pitchClass == self.tonic else {
                 return nil
             }
 
             var noteNames: [MusicTheoryKit.Pitch.NoteName] = []
 
             for (degree, pitchClass) in degreePitchClasses {
-                guard let noteName = tonicNoteName.noteName(atDegree: degree.rawValue, matching: pitchClass) else {
+                guard let noteName = tonic.noteName(atDegree: degree.rawValue, matching: pitchClass) else {
                     return nil
                 }
 

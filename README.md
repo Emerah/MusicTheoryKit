@@ -69,11 +69,11 @@ import MusicTheoryKit
 let dFlatMajor = MTKHarmony.Scale.major(tonic: .CSharp)
 print(dFlatMajor.pitchClasses)               // [C#, D#, F, F#, G#, A#, C]
 
-let noteNames = dFlatMajor.noteNames(tonicNoteName: .DFlat)
+let noteNames = dFlatMajor.noteNames(tonic: .DFlat)
 print(noteNames ?? [])                       // [Db, Eb, F, Gb, Ab, Bb, C]
 ```
 
-`noteNames(tonicNoteName:)` returns `nil` when spelling would require accidentals not currently modeled (for example, double sharps/flats).
+`noteNames(tonic:)` returns `nil` when spelling would require accidentals not currently modeled (for example, double sharps/flats).
 
 ### 3) Work with Keys and Metadata
 
@@ -100,7 +100,7 @@ import MusicTheoryKit
 let chord = MTKHarmony.Chord(root: .C, quality: .dominantNinth)
 print(chord.pitchClasses)                    // [C, E, G, A#, D]
 
-let spelled = chord.noteNames(rootNoteName: .C)
+let spelled = chord.noteNames(root: .C)
 print(spelled ?? [])                         // [C, E, G, Bb, D]
 
 let progression = MTKHarmony.ChordProgression(

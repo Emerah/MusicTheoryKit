@@ -108,9 +108,9 @@ struct ChordTests {
         let slashChord = MusicTheoryKit.Harmony.Chord(root: .C, quality: .major, bass: .E)
         let sharpEleventh = MusicTheoryKit.Harmony.Chord(root: .G, quality: .dominantSharpEleventh)
 
-        #expect(bFlatMinorSeventh.noteNames(rootNoteName: .BFlat) == [.BFlat, .DFlat, .F, .AFlat])
-        #expect(sharpEleventh.noteNames(rootNoteName: .G) == [.G, .B, .D, .F, .A, .CSharp])
-        #expect(slashChord.noteNames(rootNoteName: .C, bassNoteName: .E) == [.C, .E, .G, .E])
-        #expect(gSharpSharpEleventh.noteNames(rootNoteName: .GSharp) == nil)
+        #expect(bFlatMinorSeventh.noteNames(root: .BFlat) == [.BFlat, .DFlat, .F, .AFlat])
+        #expect(sharpEleventh.noteNames(root: .G) == [.G, .B, .D, .F, .A, .CSharp])
+        #expect(slashChord.noteNames(root: .C, bassNoteName: .E) == [.C, .E, .G, .E])
+        #expect(gSharpSharpEleventh.noteNames(root: .GSharp) == nil)
     }
 }

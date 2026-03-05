@@ -58,20 +58,20 @@ extension MusicTheoryKit.Harmony {
         /// or when a provided bass spelling does not match the chord's stored bass pitch class.
         ///
         /// - Parameters:
-        ///   - rootNoteName: The spelled root note name to use when naming the chord tones.
+        ///   - root: The spelled root note name to use when naming the chord tones.
         ///   - bassNoteName: The optional explicit bass spelling to use for slash chords.
         /// - Returns: The ordered chord tone note names plus the optional bass note spelling.
         public func noteNames(
-            rootNoteName: MusicTheoryKit.Pitch.NoteName,
+            root: MusicTheoryKit.Pitch.NoteName,
             bassNoteName: MusicTheoryKit.Pitch.NoteName? = nil
         ) -> [MusicTheoryKit.Pitch.NoteName]? {
-            guard rootNoteName.pitchClass == root else {
+            guard root.pitchClass == self.root else {
                 return nil
             }
 
             let spelledTones = zip(intervals.indices, zip(intervals, pitchClasses)).compactMap {
                 index, pair in
-                rootNoteName.noteName(
+                root.noteName(
                     atDegree: degreeNumber(for: pair.0, toneIndex: index),
                     matching: pair.1
                 )

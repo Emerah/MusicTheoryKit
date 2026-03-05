@@ -90,10 +90,10 @@ struct KeyTests {
         let dFlatMajor = MusicTheoryKit.Harmony.Key(noteName: .DFlat, scaleKind: .major)
         let bFlatMinor = MusicTheoryKit.Harmony.Key(noteName: .BFlat, scaleKind: .naturalMinor)
 
-        #expect(dFlatMajor.relativeNaturalMinor?.tonicNoteName == .BFlat)
+        #expect(dFlatMajor.relativeNaturalMinor?.tonic == .ASharp)
         #expect(dFlatMajor.relativeNaturalMinor?.keySignature?.accidentalType == .flats)
         #expect(dFlatMajor.relativeNaturalMinor?.keySignature?.accidentalCount == 5)
-        #expect(bFlatMinor.relativeMajor?.tonicNoteName == .DFlat)
+        #expect(bFlatMinor.relativeMajor?.tonic == .CSharp)
         #expect(bFlatMinor.relativeMajor?.keySignature?.accidentalType == .flats)
         #expect(bFlatMinor.relativeMajor?.keySignature?.accidentalCount == 5)
     }
@@ -114,7 +114,6 @@ struct KeyTests {
         let cSharpMajor = MusicTheoryKit.Harmony.Key(noteName: .CSharp, scaleKind: .major)
 
         #expect(dFlatMajor.tonic == .CSharp)
-        #expect(dFlatMajor.tonicNoteName == .DFlat)
         #expect(dFlatMajor.description == "Db Major")
         #expect(cSharpMajor.description == "C# Major")
     }

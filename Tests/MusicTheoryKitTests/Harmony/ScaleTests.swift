@@ -171,8 +171,8 @@ struct ScaleTests {
         let aHarmonicMinor = MusicTheoryKit.Harmony.Scale.harmonicMinor(tonic: .A)
         let gSharpMajor = MusicTheoryKit.Harmony.Scale.major(tonic: .GSharp)
 
-        #expect(dFlatMajor.noteNames(tonicNoteName: .DFlat) == [.DFlat, .EFlat, .F, .GFlat, .AFlat, .BFlat, .C])
-        #expect(aHarmonicMinor.noteNames(tonicNoteName: .A) == [.A, .B, .C, .D, .E, .F, .GSharp])
-        #expect(gSharpMajor.noteNames(tonicNoteName: .GSharp) == nil)
+        #expect(dFlatMajor.noteNames(tonic: .DFlat) == [.DFlat, .EFlat, .F, .GFlat, .AFlat, .BFlat, .C])
+        #expect(aHarmonicMinor.noteNames(tonic: .A) == [.A, .B, .C, .D, .E, .F, .GSharp])
+        #expect(gSharpMajor.noteNames(tonic: .GSharp) == nil)
     }
 }
