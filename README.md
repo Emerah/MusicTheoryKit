@@ -19,7 +19,7 @@ Add `MusicTheoryKit` to your `Package.swift` dependencies and target dependencie
 
 ```swift
 dependencies: [
-    .package(path: "../MusicTheoryKit")
+    .package(url: "https://github.com/Emerah/MusicTheoryKit.git", branch: "main")
 ]
 ```
 
